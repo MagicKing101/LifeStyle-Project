@@ -1,19 +1,36 @@
+/* ====== COMMON ====== */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  outline: none;
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    outline: none;
 }
 
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   font-style: normal;
+  margin: 0;
 }
 
+ul,
+ol {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ====== HEADER ====== */
+
 .header {
-  padding-bottom: 240px;
+  padding: 30px 0;
+
   background-image: url('https://netology-code.github.io/html-2-diploma/sources/images/banner-bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -39,13 +56,17 @@ body {
   z-index: -1;
 }
 
-.menu {
+.header-wrapper {
   box-sizing: border-box;
+  width: 1200px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+.header-navigation {
   display: flex;
-  margin: 0 auto;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 365px 0;
 }
 
 .menu__logo {
@@ -55,54 +76,64 @@ body {
 .menu__list {
   display: flex;
   list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 .menu__link {
   font-size: 13px;
   color: #fff;
-  text-decoration: none;
   text-transform: uppercase;
   padding: 10px;
 }
 
 .menu__item:not(:last-child) {
-  margin-right: 15px;
+  margin-right: 16px;
 }
 
 .menu__title {
-  position: relative;
-  top: 100px;
-  line-height: 67px;
+  max-width: 800px;
+	margin: auto;
+	padding: 100px 0;
+	text-align: center;
   text-transform: uppercase;
   display: block;
-  width: 700px;
-  margin: 0 auto;
   font-size: 45px;
-  text-align: center;
   color: #fff;
   font-weight: 700;
 }
 
+/* ====== MAIN ====== */
+
 .container {
-  width: 65%;
+  box-sizing: border-box;
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.content-container {
   display: flex;
   justify-content: space-between;
-  box-sizing: border-box;
-  margin: 0 auto;
-  padding: 65px 0;
+}
+
+.container-wrapper {
+  margin-top: 60px;
 }
 
 .main {
   width: 780px;
 }
 
-.blog__img {
+.blog-img {
   width: 380px;
   margin-right: 30px;
+  vertical-align: middle;
 }
 
 .blog {
   display: flex;
+  max-height: 300px;
 }
 
 .blog:not(:last-child) {
@@ -116,7 +147,6 @@ body {
 .blog__item {
   font-weight: 700;
   font-size: 14px;
-  list-style-type: none;
   text-transform: uppercase;
 }
 
@@ -129,7 +159,6 @@ body {
 }
 
 .blog__link {
-  text-decoration: none;
   color: #b59f5b;
 }
 
@@ -137,11 +166,11 @@ body {
   font-weight: 700;
   font-size: 20px;
   text-transform: uppercase;
-  margin-bottom: 30px;
+  margin-top: 0;
+  margin-bottom: 15px;
 }
 
 .blog__title-link {
-  text-decoration: none;
   color: #000;
 }
 
@@ -158,18 +187,21 @@ body {
 .blog__info-header {
   display: flex;
   align-items: center;
-  margin-bottom: 45px;
+  margin-bottom: 35px;
 }
 
-.paragraph {
+.post-text > p {
   font-size: 15px;
+  margin: 0;
 }
+
+/* ====== ASIDE ====== */
 
 .aside {
   width: 275px;
 }
 
-.section-title {
+.aside-section-title {
   text-transform: uppercase;
   font-weight: 700;
   text-align: center;
@@ -178,7 +210,7 @@ body {
   margin-bottom: 45px;
 }
 
-.section-title::before {
+.aside-section-title::before {
   content: '';
   display: block;
   position: absolute;
@@ -188,44 +220,44 @@ body {
   border-top: 3px solid #e1d9bd;
 }
 
-.section-title-link {
+.aside-section-title-link {
   color: #000;
-  text-decoration: none;
 }
 
-.new-posts-img {
+.aside-section-img {
   width: 70px;
   margin-right: 20px;
   margin-top: 5px;
 }
 
-.new-posts-article {
+.aside-section-article {
   display: flex;
-  padding-right: 10px;
+  height: 80px;
 }
 
-.new-posts-article:not(:last-child) {
+.aside-section-article:not(:last-child) {
   margin-bottom: 15px;
 }
 
-.new-posts-article-title {
+.aside-section-article-title {
   font-size: 14px;
   text-transform: uppercase;
   line-height: 1.25em;
+  margin: 0;
 }
 
-.new-posts-date {
+.aside-section-date {
   font-size: 12px;
   color: #888888;
 }
 
-.new-posts {
+.aside-section {
   margin-bottom: 60px;
 }
 
 .form__search {
   display: flex;
-  margin-bottom: 60px;
+  margin-top: 60px;
 }
 
 .form-field {
@@ -286,14 +318,12 @@ body {
 }
 
 .multiple-tags-item {
-  list-style-type: none;
   border: 3px solid #eeeeee;
   padding: 6px 14px 8px;
   margin-bottom: 6px;
 }
 
 .multiple-tags-link {
-  text-decoration: none;
   color: #000;
   font-size: 12px;
   font-weight: 700;
@@ -304,17 +334,12 @@ body {
   margin-right: 6px;
 }
 
-.multiple-themes-list {
-  list-style-type: none;
-}
-
 .multiple-themes-item {
   padding: 15px 0;
   border-bottom: 1px solid #eeeeee;
 }
 
 .multiple-themes-link {
-  text-decoration: none;
   color: #000;
   font-size: 14px;
   font-weight: 700;
@@ -323,21 +348,33 @@ body {
 .power {
   margin-left: 5px;
   color: #b59f5b;
+  vertical-align: super;
+}
+
+/* ====== FOOTER ====== */
+
+.footer-wrapper {
+  margin-top: 60px;
 }
 
 .social {
-  width: 65%;
+  box-sizing: border-box;
+  background-clip: content-box;
+  padding: 0 15px;
+  width: 1200px;
   margin: 0 auto;
   background-color: #f4f7f6;
+}
+
+.social-content {
+  display: flex;
+  justify-content: space-between;
 }
 
 .social-list {
   padding: 30px 0;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
   width: 110px;
-  list-style-type: none;
 }
 
 .social-icon {
@@ -347,7 +384,6 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 20px;
-  text-decoration: none;
 }
 
 .social-icon-dribbble {
